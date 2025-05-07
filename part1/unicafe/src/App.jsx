@@ -1,4 +1,4 @@
-//1.4 INFORMACIÓN DEL CURSO PARTE 5
+//1.5 INFORMACIÓN DEL CURSO PARTE 5
 /* 
 Llevemos los cambios un paso más allá. Cambia el curso y sus partes a un solo objeto JavaScript.
 Arregla todo lo que se rompa.
