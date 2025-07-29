@@ -1,4 +1,35 @@
 import { useState } from "react"; //Se importa la función useState
+import ReactDom from 'react-dom'
+
+//PASANDO CONTROLADORES DE EVENTOS A COMPONENTES HIJOS
+
+const Button = (props) => (
+  <button onClick={props.handleClick}>
+    {props.text}
+  </button>
+)
+
+const Display = props => <div>{props.value}</div>
+
+const App = () => {
+  const [value, setValue] = useState(10)
+
+  const setToValue = (newValue) => {
+    console.log('value now', newValue)
+    setValue(newValue)
+  }
+
+  return (
+    <div>
+      <Display value={value} />
+      <Button handleClick={() => setToValue(1000)} text="Thousand" />
+      <Button handleClick={() => setToValue(0)} text="Reset" />
+      <Button handleClick={() => setToValue(value + 1)} text="Increment" />
+    </div>
+  )
+}
+
+export default App;
 
 // ESTADO COMPLEJO
 /*const App = () => {
@@ -37,7 +68,7 @@ import { useState } from "react"; //Se importa la función useState
 
 //RENDERIZADO CONDICIONAL.
 
-const History = (props) => {
+/*const History = (props) => {
   if (props.allClicks.length === 0){
     return(
       <div>
@@ -86,21 +117,7 @@ const App = () => {
       <History allClicks={allClicks} />
     </div>
   )
-}
-
-export default App;
-
-
-
-
-
-
-
-
-
-
-
-
+}*/
 
 /*const Display = (props) => {
   return(
